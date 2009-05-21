@@ -1,0 +1,11 @@
+<ul class="sf-menu sf-vertical">
+<li><a href="[% c.uri_for('/setup/edit') %]">Edit Setup</a></li>
+<li><a href="[% c.uri_for('/upload') %]" target="_blank">Upload files</a></li>
+[% IF site_config.other_homepage %] <li><a href="[% site_config.other_homepage %]">Other Homepage</a></li> [% END %]
+<li> <a href="[% c.uri_for('/publish/_add_page') %]">Add top level page </a> </li>
+[% IF c.req.path.length - %]
+<li> <a href="[% c.uri_for('/publish/_add_page', c.req.path) %]">Add another page at current level</a></li> 
+<li> <a href="[% c.uri_for('/publish/_add_page', c.req.path, {'below' = 1}) %]">Add page below this one</a></li> [% END -%]
+[% IF is_terminal -%] <li> <a href="[% c.uri_for('/publish/_delete_page', c.req.path) %]" onclick="javascript:confirmDelete()">Delete this page</a></li> [% END %]
+<li> <a href="[% c.uri_for('/help') %]", target="_blank">Help</a></li>
+</ul>

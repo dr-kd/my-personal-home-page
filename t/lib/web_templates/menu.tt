@@ -1,0 +1,18 @@
+[%MACRO render_menu(node) BLOCK  -%]
+<ul class="sf-menu">
+<li><a href="[% c.uri_for('/') %]">Home</a> </li>
+<li><a href="[% site_config.ro_uri %]">Publications (with free fulltext)</a></li>
+[%- FOREACH item IN node.getAllChildren -%]
+  <li> <a href="[% c.uri_for(item.getNodeValue) %]"> [% item.getNodeValue %]</a> [% IF item.getAllChildren.size; render_submenu(item) ; END %]   </li>
+[%- END -%]
+</ul>
+[%- END -%]
+[%- MACRO render_submenu(node) BLOCK -%]
+[%- FOREACH child IN node.getAllChildren -%]
+<ul>
+[% SET visitor = child.accept(pathfinder) %]  <li>   <a href="[% c.uri_for(visitor.join('/')) %]"> [% child.getNodeValue %]</a> [% IF child.getAllChildren.size; render_submenu(path); END %] </li>
+</ul>
+[%- END -%]
+[%- END -%]
+
+

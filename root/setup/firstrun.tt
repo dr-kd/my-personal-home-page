@@ -1,0 +1,83 @@
+[% WRAPPER page.tt title = "Personal Web Page Setup"  %]
+<link rel="stylesheet" href="[% c.uri_for('/static/css/form.css') %]" type="text/css">
+</head>
+<script language='javascript'>
+function verifyMe(){
+var msg='';
+
+if(document.getElementById('fn').value==''){
+	msg+='- First name\n\n';}
+if(document.getElementById('sn').value==''){
+	msg+='- Surname\n\n';}
+if(document.getElementById('username').value==''){
+	msg+='- FTP login\n\n';}
+if(document.getElementById('pass').value==''){
+	msg+='- FTP password\n\n';}
+if(document.getElementById('passconf').value==''){
+	msg+='- confirm password\n\n';}
+
+if(document.getElementById('pass') != document.getElementByID('passconf') {
+        msg+=' password and confirm password field do not match\n\n';}                                  
+
+if(msg!=''){
+	alert('The following fields are empty or invalid:\n\n'+msg);
+	return false
+}else{
+	return true }
+
+}
+</script>
+
+[% IF message %]
+<span style="color: red; font-weight: bold; backround-color: #8cc">[% message %] </span>
+[% END %]
+
+<div style="width: 350px; background-color: #6cc;
+border: 1px dotted #333; padding: 5px;
+margin: 0px auto">
+<h1> Site setup  </h1>
+<p>To setup the web publishing software you need to provide the following information:</p>
+
+<p>
+<h2> Basic setup</h2> (leave "site title" blank to default to "Your Name's Personal Homepage") 
+
+<form name='setup' action='/setup/do_setup' method='POST' enctype='application/x-www-form-urlencoded' onsubmit='return verifyMe();'>
+
+<div class="row"><span class='label' >Site title:  </span>
+<span class="formw">
+  <input type='text' name='title' id='title' size='45' value="[% site_config.title %]"></span></div>
+<div class="row"><span class='label' >First Name (required)</span>
+<span class="formw">
+  <input type='text' name='fn' id='name' size='45' value='[% site_config.fn %]'></span></div>
+<div class="row"><span class='label' >Surname (required)</span>
+<span class="formw">
+  <input type='text' name='sn' id='sn' size='45' value='[% site_config.sn %]'></span></div>
+  <div class="row"><span class='label' >Office</span>
+<span class="formw">
+  <input type='text' name='office' id='office' size='45' value='[% site_config.office %]'></span></div>
+  <div class="row"><span class='label' >Telephone number</span>
+<span class="formw">
+  <input type='text' name='tel' id='tel' size='45' value='[% site_config.tel %]'></span></div>
+
+  <div class="row"><span class='label'  >FTP user name (required)</span><span class="formw">
+<input type='text' name='username' id='username' size='45' value='[% site_config.username %]'></span></div>
+<div class="row"><span class='label'  >FTP password (required) </span>
+<span class="formw"> <input type='password' name='pass' id='pass' size='45' value=''> </span> </div>
+<div class="row"><span class='label'  >Confirm password (required) </span>
+<span class="formw"> <input type='password' name='confpass' id='confpass' size='45' value=''> </span> </div>
+
+<p>
+<h2> Advanced setup </h2>
+Setting the below to "site" (for example) will result in your pages being available from "http://www.example.com/~your_user_name/site" rather than "http://www.example.com/~your_user_name" which is the default.  Use this option if you have existing material in your ftp server's public_html directory that you want to keep.  If you don't know what this all means, leave the below blank.</p>
+
+<div class="row"><span class='label'  >Site start </span>
+<span class="formw"> <input type='text' name='root' id='pass' size='45' value='[% site_config.root %]'> </span> </div>
+
+
+<div class="row"><span class='label'> </span><span class='formw'> <input type='submit' name='submit' value='Submit'>&nbsp;<input type='reset' name='reset' value='Reset'></span></div>
+</form></div>
+
+</div>
+</div>
+</body>
+[% END %]

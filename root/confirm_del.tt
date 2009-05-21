@@ -1,0 +1,5 @@
+[% WRAPPER page.tt title = "Confirm delete page" _ c.req.args.join('/')   %]
+<h1> Confirm delete page [% c.req.args.join('/') %] </h1>
+<a href="[% delete %]">Yes, Delete</a><br />
+<a href="[% cancel %]">No, Cancel</a>
+[%END %]

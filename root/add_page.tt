@@ -1,0 +1,7 @@
+<table>
+<tr><td><h2> Add page </h2></td></tr>
+<form name='content' action='[% dest %]' method='POST' enctype='multipart/form-data' onsubmit='return verifyMe();'>
+<tr><td>Page Title<input type="text" name="title" width='50' /> <input type="hidden" name='below' value='[% below %]' /> </td></tr>
+<tr><td> <textarea id="absurls" name='copy' cols='80' rows='20' >[% page_content %]</textarea><br /></td></tr>
+<tr><td><input id="submit_edits" type='submit' name='submit' value='Submit'></td><td><input type='reset' name='reset' value='Reset'></td></tr>
+</table>

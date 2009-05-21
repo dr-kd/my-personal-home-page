@@ -1,0 +1,8 @@
+NUMBER 1 PRIORITY:
+make able to deploy on a web server somewhere other than a tilde username.
+i.e. for now we can only deploy on http://www.example.com/~username or ~/username/foo
+Next step is to fix that
+
+Then get the test suite working again.
+
+Then add technical documentation.

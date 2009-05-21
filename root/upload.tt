@@ -1,0 +1,42 @@
+[% WRAPPER page.tt title = "Upload files to " _ site_config.title  %]
+<link rel="stylesheet" href="[% c.uri_for('/static/css/form.css') %]" type="text/css">
+</head>
+<body>
+<div class="main gridlines">
+<div class="clear">&nbsp;</div>
+<div class="ml10 mr15 clearfix"><h1> Upload files to my personal website  </h1>
+<h2 style="color:red"> IMPORTANT NOTICE:</h2>  <p style="font-size:1.5em; font-weight:bold;">DO NOT upload files that you do not have the right to re-distribute.  Doing so will get you in trouble with your employer!  You should be sure that you hold the copyright of a file, or that the file can be redistributed under a permissive copyright/licence</p>
+<p class="note">[% PROCESS menu.tt; render_menu(menu) %]</p>
+</div>
+<div class="dr15">
+</div>
+<div  class="dl10">
+</div>
+<div class="ml10 fluid mr15">
+
+<form  method="post" enctype='multipart/form-data' action="[% c.uri_for('do_upload') %]">
+<fieldset>
+<legend>Upload file</legend>
+<label for="file">File:</label>
+<input tabindex="1" id="file" type="file" name="file" /><br />
+<input tabindex="2" type="submit" name="submit" value="Submit"  />
+</fieldset>
+</form>
+
+<form  method="post" enctype='multipart/form-data' action="[% c.uri_for('do_upload') %]">
+<fieldset>
+<legend>Uploaded files</legend>
+<ul>
+[% IF files %]
+[%-
+SET old_view = c.stash.current_view || "Edit"; c.stash.current_view="Publish";
+FOREACH file IN files; SET uri = c.uri_for("/$site_config.root/uploads/$file") %]
+<li> <a href="[% uri %]"> Name: [% file %] </a> Link: [% uri %]  </li>
+[% END; c.stash.current_view="Edit" %]
+</ul>
+[% ELSE %] <h3> No files uploaded yet</h3> [% END %]
+</form>
+</div>
+</div>
+</body>
+[% END %]

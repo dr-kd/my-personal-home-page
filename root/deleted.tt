@@ -1,0 +1,4 @@
+[% WRAPPER page.tt title = error   %]
+<h1>[% error %]</h1>
+<a href="[% dest_path %]">Back to pages</a>
+[% END %]

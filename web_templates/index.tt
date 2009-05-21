@@ -1,0 +1,28 @@
+</head>
+<body>
+<div class="main gridlines">
+<div class="clear">&nbsp;</div>
+<div class="ml2 mr15 clearfix"><a href="http://flickr.com/photos/amagill/38961674/sizes/l/"><img src="[% c.uri_for("/$site_config.root/static/images/office.jpg") %]" alt="banner"></a>
+<h1 style="text-align:center"> [% render_path.last || site_config.title %]  </h1> 
+<p class="note">[% PROCESS menu.tt; render_menu(menu) %]</p>
+</div>
+<div class="dr15">
+</div>
+<div  class="dl10">
+</div>
+
+<div class="ml10 fluid mr15">
+[% content %]
+<hr />
+</div>
+
+<div class="hp oldbook tc">
+<div class="dl10"><a href="[% c.uri_for("/$site_config.root/atom.xml") %]"><img src="[% c.uri_for("/$site_config.root/static/images/feed.png") %]"></a> <br /><a href="[% c.uri_for("/$site_config.root/atom.xml") %]">Atom feed </a></div>
+<div class="ml10 mr15"> Office: [% site_config.office %] | Tel: [% site_config.tel %] | Email: <a href="mailto:[% site_config.email %]">[% site_config.email %]</a>
+<br />
+</div>
+<div class="dr15"> Original content is <br /> &copy; [% USE date(format = '%Y'); " " _ site_config.fn _ " " _ site_config.sn _ " " _ date.format  %]</div>
+</div>
+</div>
+
+

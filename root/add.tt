@@ -1,0 +1,14 @@
+[% WRAPPER page.tt title = site_config.title  %]
+
+<div class="main gridlines">
+[% PROCESS menu.tt %]
+<div class="clear">&nbsp;</div>
+
+[% IF pending.size %]
+    [% PROCESS pending.tt %]
+[% END %]
+
+
+[% PROCESS add_page.tt %]
+</div>
+[% END %]

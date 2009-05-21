@@ -1,0 +1,37 @@
+[% WRAPPER page.tt title = site_config.title  %]
+</head>
+<body>
+<div class="main gridlines">
+<div class="clear">&nbsp;</div>
+<div class="ml10 mr15 clearfix"><h1> [% site_config.title %]  </h1> 
+<p class="note">[% PROCESS menu.tt; render_menu(menu) %]</p>
+</div>
+<div class="dr15">
+</div>
+<div  class="dl10">
+
+ <h3>Admin menu</h3>
+[% PROCESS admin_menu.tt %]
+</div>
+
+<div class="ml10 fluid mr15">
+
+<p>
+[% IF error %]  <p style="font-size:2em; color:red"> [% error %] <br />  <hr /> [% END %]
+    [% PROCESS edit_page.tt %]
+<hr />
+<h3>Public location for page:  <a href='
+[%- c.config.publish_base _  "/~" _ site_config.username _ "/";  IF site_config.root; site_config.root _ "/"; END ;  request_path.join('/') %]' target="_blank" > [% c.config.publish_base  _  "/~" _ site_config.username _ "/";  IF site_config.root; site_config.root _ "/"; END ;  request_path.join('/') %] </a></h3>
+</div>
+
+<div class="hp oldbook tc">
+
+<div class="dl10"><a href="[% c.uri_for('/atom.xml') %]"><img src="[% c.uri_for('/static/images/feed.png') %]"></a> <br /><a href="[% c.uri_for('/xml') %]">Atom feed </a></div>
+<div class="ml10 mr15"> Office: [% site_config.office %] | Tel: [% site_config.tel %] | Email: <a href="mailto:[% site_config.email %]">[% site_config.email %]</a>  </div>
+<div class="dr15"> Original content is <br />  &copy; [% USE date(format = '%Y'); " " _ site_config.fn _ " " _ site_config.sn _ " " _ date.format  %]</div>
+</div>
+</div>
+
+
+
+[% END %]

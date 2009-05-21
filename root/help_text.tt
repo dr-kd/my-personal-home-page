@@ -1,0 +1,156 @@
+<h1> Introduction</h1>
+
+<p style="text-align:justify">
+
+My Personal Home Page is software which allows you to create and edit a simple
+web site in your web browser, which it then transfers over the internet to a
+public location.  In this case the destination will be a site with the address
+http://www.example.com/~[your user name].  MyPHP takes care of all the technical
+details of web publishing for you so that you can concentrate on the content of
+what you want to write.
+
+</p>
+
+<p style="text-align:justify"> Usage of MyPHP should be fairly simple.  When
+you visit the home page for the editing software, you are met with a window
+that has administrative menu on the right hand side, and A menu with links to
+all of your pages (and maybe a couple of external pages) at the top.  In the
+middle of the screen, you can edit your site. </p>
+
+<h2> A note on editing web pages </h2>
+
+<p style="text-align:justify">When you edit a word processor document, you can
+either use styles to indicate headings, paragraphs and so on, or you can
+bold/italic text and mess around with the fonts by hand.  When you edit a web
+page, it's infinitely preferable to do the former. MyPHP basically forces you
+to take this approach.</p>
+
+<h2>Your first page</h2>
+
+<p style="text-align:justify">When you open the MyPHP editing page, you're
+greeted with the two menus and a big editing box.  Editing pages should be
+self-explanatory.  You can add links, change the style of text, tables and most
+other useful things.  Use the "Format" dropdown box to add headings and other
+pre-defined styles.  Mouse over each of the icons to see what they do - a
+little tooltip will show up.  You can add special characters with the button
+that looks like a greek omega.  You can also add bullet points and numbered
+lists, as well as changing the indent level of your text with the appropriate
+buttons.</p>
+
+<h2>Adding pages</h2>
+<p style="text-align:justify">
+You have up to three links in the right hand side menu to add new pages.  These
+are: "Add page at top level", "Add another page at current level" and "Add page
+below this one".  We'll deal with these in turn:
+
+<ul>
+<li>Add page at top level</li>
+<p style="text-align:justify">
+This adds a new page just below the home page.  So if your home page is at
+http://example.com/ then adding a new top level page will add a new page at
+http://example.com/[title you chose for the page].  </p>
+<li>Add another page at current level</li>
+<p style="text-align:justify">
+So if you were visiting your page at http://example.com/newpage/category1 then
+chosing this option while visiting that page will give you a page at
+http://example.com/newpage/category2 (if you chose category2 to be the title of
+the new page).
+</p>
+
+<li>Add page below this one</li>
+<p style="text-align:justify">
+If you chose this link from visiting http://example.com/newpage/category1,
+you'd end up with the page http://example.com/newpage/category1/category2.
+</p>
+</ul>
+
+</p>
+</ul>
+</p>
+</h2>
+
+<h2>Uploading files</h2>
+
+<p style="text-align:justify">You can upload files using the "Upload files"
+item on the right hand side menu.  This will open a new browser window.  When
+you're there select the file that you're going to upload and click the "Submit"
+button.  Once its finished uploading (it might take a while depending on the
+size of the file).  Note that if you upload a file with the same name as
+already exists on your site, the new file will over-write the new file.  Once
+you've uploaded the file, it's address appears in a list below the upload form,
+along with a link to it.  You can right click on the link and select the "Copy
+Shortcut" (for Internet Explorer) or "Copy link Location" (for Firefox) option
+to copy the url to the clipboard. </p>
+
+<h2> Making links in documents </h2>
+
+<p style="text-align:justify">When you want to link to another web page, image,
+pdf or other document, you need its URL.  You'll need to copy the link to the
+clipboard to be able make the link.  Here's how to copy different types
+of link to the clip board.
+
+<ul>
+<li>Web pages</li>
+
+<p style="text-align:justify">Copy the address of the web page in the address
+bar to the clip board.  Then write the link text (<a href="#">This kind of
+thing except actually a proper link</a>) and select it with the mouse.  Next
+click on the link icon in the editor toolbar at the bottom, and paste the link
+address into the box that says "Link URL".  If you want the link to open in a
+new window (and you almost always don't), use the target dropdown to select the
+"Open in new window" option.</p>
+
+<li>Other documents (pdfs, powerpoint decks etc)</li>
+<p style="text-align:justify">This depends on your web browser and the sanity
+of the person that designed the site.  If you right-click on the linked of
+interest in Internet explore and select "Copy Shortcut", you can then follow
+the procedure for linking to a web pages as above. If you're using the Firefox
+web browser, the thing to select when you right click is the rather more
+sensibly named "Copy link location"</p>
+
+<p style="text-align:justify"> Note that there are problems with some links
+like this, especially with links to journal articles on academic databases.  If
+you have problems with directly linking to PDF files, then you should just link
+to the page that contains that link instead.  Unfortunately occasionally you
+see pages that are not bookmarkable ( a link is just a kind of a bookmark
+really ) due to poor web design practice.  In this case you're out of luck
+unfortunately, and you should find an alternative source to link to.  </p>
+
+<h2>Including Images</h2>
+
+<p style="text-align:justify"> Images are slightly trickier. First you want to
+find an image that's the right size for the page (around 400 pixels is good for
+images which text wraps around, 500 pixels wide for full page).  If you have a
+large image, just make a link to the uploaded file - don't try to display it on
+the page.  There are a variety of software tools that will do this for you, or
+you can use an online service like <a href="http://www.shrinkpictures.com/"
+target="_blank">shirnkpictures.com</a>.  Once you have an image that is the
+right size, upload it using the upload menu item, and copy the link.  Next in
+the edit box, place the cursor where you want the image to be inserted, and
+click on the image button (the one like a picture).  Then you have to paste the
+url into the "Image URL" box.  It's also good practice to include an "image
+description" - this is helpful for people who can't browse with images on,
+expecially blind users.  </p>
+
+<p style="text-align:justify"> Now things start to become a little
+complicated.  You have quite a lot of control over image placement.  The
+important bits are in the Appearance tab where you can select whether to align
+the image left, right or centered.  If you align it left or right, you'll have
+text wrapping around it, so you'll also want to set horizontal and vertical
+spacing.  This is measured in pixels, and somewhere between 10 and 15 should be
+sufficient to stop your text from ramming up against the images.  Note that if
+your image is too big for the page, you can "shrink" it (by telling the browser
+to render it smaller than it actually is) by altering the dimensions box.  This
+is also in pixels.  Be sure to keep the two coordinates in proportion to each
+other, otherwise your image will start look squashed.  </p>
+
+<h3> A final note on images </h3>
+<p style="text-align:justify">
+If you're publishing photos, use the .jpg file format.  If you're publishing
+diagrams, use the .png or .gif file format.
+</p>
+
+<h2> Wrap up</h2>
+<p style="text-align:justify">
+
+</p>
