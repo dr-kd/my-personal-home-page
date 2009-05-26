@@ -270,6 +270,7 @@ sub get_uploaded_files {
 sub put_uploaded_file {
     my ($self, $upload) = @_;
     my $f = Net::FTP->new($self->host);
+    $f->binary;
     $f->login($self->user, $self->pass);
     my @dest = Path::Class::Dir->new($self->dest_root)->dir_list;
     $f->cwd($_) for @dest;
